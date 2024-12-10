@@ -1,0 +1,23 @@
+in bplus tree
+public int countLeafNodes() {
+    return countLeafNodes(root);
+}
+
+private int countLeafNodes(Node node) {
+    if (node.isLeaf) {
+        return 1;
+    } else {
+        int count = 0;
+        for (Node child : node.children) {
+            count += countLeafNodes(child);
+        }
+        return count;
+    }
+}
+
+in dictionary
+and
+
+int leafNodeCount = bpt.countLeafNodes(); System.out.println("Number of leaf nodes: " + leafNodeCount);
+
+time calculate: // Measure the time taken for the search long startTime = System.nanoTime(); String meaning = bpt.search(word); long endTime = System.nanoTime(); long duration = endTime - startTime; if (meaning != null) { System.out.println("Meaning: " + meaning); } else { System.out.println("Word not found in the dictionary."); } System.out.println("Search executed in " + duration + " nanoseconds."); } scanner.close(); } }
